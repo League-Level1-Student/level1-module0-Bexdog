@@ -18,41 +18,53 @@ public class PhotoQuiz {
 
 	public void run() throws Exception {
 
-		JFrame quizWindow = new JFrame();
-		quizWindow.setVisible(true);
+		JFrame frame = new JFrame();
+		frame.setVisible(true);
 		// This will make sure the program exits when you close the window
-		quizWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// 1. find an image on the internet, and put its URL in a String
 		// variable (from your browser, right click on the image, and select
 		// “Copy Image Address”)
 
 		// 2. create a variable of type "Component" that will hold your image
-
+		Component image = createImage("download (1).jpeg");
 		// 3. use the "createImage()" method below to initialize your Component
-
+		// done
 		// 4. add the image to the quiz window
-
+		frame.add(image);
 		// 5. call the pack() method on the quiz window
-
+		frame.pack();
 		// 6. ask a question that relates to the image
-
+		String bob = JOptionPane.showInputDialog("Who is this?");
 		// 7. print "CORRECT" if the user gave the right answer
-
+		if (bob.equals("Trump")) {
+			JOptionPane.showMessageDialog(null, "CORRECT");
+		}
 		// 8. print "INCORRECT" if the answer is wrong
-
+		else {
+			JOptionPane.showMessageDialog(null, "INCORRECT");
+		}
 		// 9. remove the component from the quiz window (you may not see the
 		// effect of this until step 12)
-
+		frame.remove(image);
 		// 10. find another image and create it (might take more than one line
 		// of code)
-
+		Component image2 = createImage("download.jpeg");
 		// 11. add the second image to the quiz window
-
+		frame.add(image2);
 		// 12. pack the quiz window
+		frame.pack();
 
 		// 13. ask another question
-
+		String Bob = JOptionPane.showInputDialog("Who is this?");
+		if (Bob.equals("Trump")) {
+			JOptionPane.showMessageDialog(null, "CORRECT");
+		}
+		// 8. print "INCORRECT" if the answer is wrong
+		else {
+			JOptionPane.showMessageDialog(null, "INCORRECT");
+		}
 		// 14+ check answer, say if correct or incorrect, etc.
 
 	}
