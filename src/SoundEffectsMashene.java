@@ -14,26 +14,23 @@ public class SoundEffectsMashene implements ActionListener {
 		bob = new Random().nextInt(3);
 
 		JFrame frame = new JFrame();
+		frame.setVisible(true);
 		JButton button1 = new JButton();
-		JButton button2 = new JButton();
-		JButton button3 = new JButton();
 		button1.addActionListener(this);
-		button2.addActionListener(this);
-		button3.addActionListener(this);
 		frame.add(button1);
-		frame.add(button2);
-		frame.add(button3);
-
+		frame.pack();
+		
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		if (bob == 0) {
 			playSound("shiny-objects.wav");
 		} else if (bob == 1) {
-			playSound("Cool.wav");
+			playSound("homer-woohoo.wav");
 		} else {
 			playSound("llama.wav");
 		}
+		bob = new Random().nextInt(3);
 	}
 
 	private void playSound(String fileName) {
