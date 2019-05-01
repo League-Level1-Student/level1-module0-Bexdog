@@ -14,7 +14,7 @@ public class Houses {
 	static Color  color;
 public static void main(String[] args) {
 	String Bob = "";
-	
+	String bOb = "";
 	int small = 60;
 	int medium = 120;
 	int large = 250;
@@ -24,17 +24,24 @@ public static void main(String[] args) {
 	bob.penDown();
 	for(int i = 0;i<999;i++) {
 		Bob = JOptionPane.showInputDialog("pick a size; small, medium, or large?");
+		bOb = JOptionPane.showInputDialog("pick a color; red, blue, or yellow?");
 		if(Bob.equals("small")) {
 			size = small;
-			color = Color.CYAN;
 		}
 		else if(Bob.equals("medium")) {
 			size = medium;
-			color = Color.GREEN;
 		}
 		else {
 		size = large;
-		color = Color.MAGENTA;
+		}
+		if(bOb.equalsIgnoreCase("Red")) {
+			color = Color.RED;
+		}
+		else if(bOb.equalsIgnoreCase("Blue")) {
+			color = Color.BLUE;
+		}
+		else {
+		color = Color.YELLOW;
 		}
 		drawHouse();
 	
